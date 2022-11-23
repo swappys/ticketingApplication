@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.devopsApp.ticketingSystem.TicketingSystemApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.405 s - in com.devopsApp.ticketingSystem.TicketingSystemApplicationTests
