@@ -1,0 +1,11 @@
+[Unit]
+Description=Ticketing Application
+
+[Service]
+User={{APPUSER}}
+ExecStart=/bin/java -jar /home/{{APPUSER}}/{{APPNAME}}.war
+SyslogIdentifier={{APPNAME}}
+
+[Install]
+WantedBy=multi-user.target
+

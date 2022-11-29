@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>IT Infrastructure Management System</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+   <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+  .container{
+background-color:rgb(242,242,242);
+margin:50px;
+margin-left:100px;
+padding-top:20px ;
+padding-left:5px;
+padding-right:5px;
+padding-bottom:30px;
+}
+
+   </style>
+</head>
+<body >
+
+<nav class="navbar navbar-expand-sm" style="background-color:#a0522d">
+  <!-- Brand -->
+  <a class="navbar-brand" href="{% url 'home' %}" style="color:orange">IT Infrastructure Management System</a>
+  <!-- Links -->
+</nav>
+
+<center>
+    <h3 align="center" style="margin-top:20px"> Employee Registration </h3>
+    <table>
+        <tr>
+            <td>
+               <div class="container" style="margin-left:20px;height:500px;width:400px"align="center">
+                <p id="error" style="color:red"></p>
+                <form>                    
+                    <h4>Email Id </h4><input type="text" id="email" name="email" placeholder=" Enter your Email ID"><br>
+                    <h4>Name </h4> <input type="text" id=signupUsername name="Name" placeholder="Enter your Name"><br>
+                    <h4>Phone Number</h4> <input type="text" id="phno" name="enroll" placeholder="Personal Phone Number" ><br>
+                    <h4>Password</h4><input type="password" id="password" name="password" placeholder="Password"><br><br>
+                    <h4>Confirm Password</h4><input type="password" id="confirmPassword" name="confirm Password" placeholder="Confirm Password"><br><br>
+                    <input class="btn btn-primary" type="button" value="Submit" onclick="registerUser()">
+                </form>
+                </div>
+            </td>
+         </tr>
+    </table>
+
+</center>
+<script src="js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
