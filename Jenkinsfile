@@ -3,6 +3,7 @@ pipeline {
 
   environment {
     SONAR = credentials('SONAR')
+    SSH = credentials('SSH')
   }
 
   stages {
@@ -30,7 +31,7 @@ pipeline {
         sh '''
           cd terraform 
           terraform init 
-          terraform apply -auto-approve 
+          terraform apply -auto-approve -var SSH_USR=${SSH_USR} -var SSH_PSW=${SSH_PSW}
         '''
       }
     }

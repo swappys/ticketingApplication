@@ -32,3 +32,12 @@ resource "aws_security_group" "main" {
     Name = "ticketing-app-server-sg"
   }
 }
+
+resource "null_resource" "ansible-apply" {
+  provisioner "local-exec" {
+    command = <<EOF
+cd ansible
+ansible-playbook -i ${aws_instance.ticketing-app-server.private_ip}, ticketingapp.yml -e ansible_user=${var.SSH_USR} -e ansible_password=${var.SSH_PSW}
+EOF
+  }
+}
