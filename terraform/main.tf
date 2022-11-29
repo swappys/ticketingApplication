@@ -52,6 +52,7 @@ resource "null_resource" "wait-for-ssh" {
 }
 
 resource "null_resource" "ansible-apply" {
+  depends_on = [null_resource.wait-for-ssh]
   triggers = {
     always = timestamp()
   }
