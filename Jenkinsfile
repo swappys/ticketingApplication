@@ -1,6 +1,10 @@
 pipeline {
   agent any
 
+  options {
+    ansiColor('xterm')
+  }
+
   environment {
     SONAR = credentials('SONAR')
     SSH = credentials('SSH')
