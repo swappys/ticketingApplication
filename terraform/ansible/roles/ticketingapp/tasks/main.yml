@@ -15,13 +15,13 @@
 
 - name: Remove Old Application
   ansible.builtin.file:
-    path: /home/{{APPUSER}}/{{APPNAME}}.jar
+    path: /home/{{APPUSER}}/{{APPNAME}}.war
     state: absent
 
 - name: Copy Application Jar file
   ansible.builtin.copy:
     src: "{{APPNAME}}.jar"
-    dest: /home/{{APPUSER}}/{{APPNAME}}.jar
+    dest: /home/{{APPUSER}}/{{APPNAME}}.war
   become_user: "{{APPUSER}}"
 
 - name: Setup SystemD Service

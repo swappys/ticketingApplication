@@ -26,7 +26,11 @@ pipeline {
 
     stage('Build Package') {
       steps {
-        sh 'mvn package'
+        sh '''
+          mvn package
+          mkdir -p terraform/ansible/roles/ticketingapp/files
+          cp target/ticketingSystem-0.0.1-SNAPSHOT.war  terraform/ansible/roles/ticketingapp/files/ticketingapp.war
+        '''
       }
     }
 
