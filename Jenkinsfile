@@ -15,7 +15,7 @@ pipeline {
 
     stage('SonarQube Analysis') {
       steps {
-        sh '#sonar-scanner -Dsonar.host.url=http://172.31.14.53:9000 -Dsonar.login=${SONAR_USR} -Dsonar.password=${SONAR_PSW} -Dsonar.projectKey=ticketing -Dsonar.qualitygate.wait=true -Dsonar.java.binaries=./target'
+        sh 'sonar-scanner -Dsonar.host.url=http://172.31.14.53:9000 -Dsonar.login=${SONAR_USR} -Dsonar.password=${SONAR_PSW} -Dsonar.projectKey=ticketing -Dsonar.qualitygate.wait=true -Dsonar.java.binaries=./target'
       }
     }
 
