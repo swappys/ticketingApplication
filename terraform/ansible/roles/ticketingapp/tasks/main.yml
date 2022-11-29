@@ -10,7 +10,7 @@
 - name: Stop Ticketing Application
   ansible.builtin.systemd:
     name: "{{APPNAME}}"
-    state: stop
+    state: stopped
   ignore_errors: yes
 
 - name: Remove Old Application
