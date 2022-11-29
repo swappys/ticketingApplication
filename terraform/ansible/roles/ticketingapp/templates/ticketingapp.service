@@ -3,7 +3,7 @@ Description=Ticketing Application
 
 [Service]
 User={{APPUSER}}
-ExecStart=/bin/java /home/{{APPUSER}}/{{APPNAME}}.war
+ExecStart=/bin/java -jar /home/{{APPUSER}}/{{APPNAME}}.war
 SyslogIdentifier={{APPNAME}}
 
 [Install]
