@@ -1,3 +1,37 @@
-- name: Test
-  ansible.builtin.debug:
-    msg: Tes
+- name: Install Java
+  ansible.builtin.yum:
+    name: java-11-openjdk
+    state: installed
+
+- name: Add application user
+  ansible.builtin.user:
+    name: "{{APPUSER}}"
+
+- name: Stop Ticketing Application
+  ansible.builtin.systemd:
+    name: "{{APPNAME}}"
+    state: stop
+  ignore_errors: yes
+
+- name: Remove Old Application
+  ansible.builtin.file:
+    path: /home/{{APPUSER}}/{{APPNAME}}.jar
+    state: absent
+
+- name: Copy Application Jar file
+  ansible.builtin.copy:
+    src: "{{APPNAME}}.jar"
+    dest: /home/{{APPUSER}}/{{APPNAME}}.jar
+  become_user: "{{APPUSER}}"
+
+- name: Setup SystemD Service
+  ansible.builtin.template:
+    src: ticketingapp.service
+    dest: /etc/systemd/system/ticketingapp.service
+
+- name: Start TicketingApp Service
+  ansible.builtin.systemd:
+    name: "{{APPNAME}}"
+    state: start
+    enabled: yes
+    daemon-reload: yes

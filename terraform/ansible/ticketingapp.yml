@@ -3,6 +3,7 @@
   become: yes
   vars:
     APPUSER: ticketingapp
+    APPNAME: ticketingapp
   roles:
     - ticketingapp
 
