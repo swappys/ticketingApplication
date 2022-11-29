@@ -30,7 +30,7 @@ pipeline {
         sh '''
           cd terraform 
           terraform init 
-          #terraform apply -auto-approve 
+          terraform apply -auto-approve 
         '''
       }
     }
