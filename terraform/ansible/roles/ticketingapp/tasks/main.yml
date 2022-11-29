@@ -32,6 +32,6 @@
 - name: Start TicketingApp Service
   ansible.builtin.systemd:
     name: "{{APPNAME}}"
-    state: start
+    state: started
     enabled: yes
     daemon-reload: yes
