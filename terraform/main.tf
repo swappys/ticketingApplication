@@ -40,6 +40,17 @@ resource "aws_security_group" "main" {
   }
 }
 
+resource "null_resource" "wait-for-ssh" {
+  provisioner "remote-exec" {
+    connection {
+      host = aws_instance.ticketing-app-server.private_ip
+      user = var.SSH_USR
+      password = var.SSH_PSW
+    }
+    inline =["true"]
+  }
+}
+
 resource "null_resource" "ansible-apply" {
   triggers = {
     always = timestamp()
