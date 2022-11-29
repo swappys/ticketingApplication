@@ -1,0 +1,8 @@
+- name: Ticketing Application Deployment Playbook
+  hosts: all
+  become: yes
+  vars:
+    APPUSER: ticketingapp
+  roles:
+    - ticketingapp
+
