@@ -20,7 +20,7 @@
 
 - name: Copy Application Jar file
   ansible.builtin.copy:
-    src: "{{APPNAME}}.jar"
+    src: "{{APPNAME}}.war"
     dest: /home/{{APPUSER}}/{{APPNAME}}.war
   become_user: "{{APPUSER}}"
 
