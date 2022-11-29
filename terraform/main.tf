@@ -34,6 +34,9 @@ resource "aws_security_group" "main" {
 }
 
 resource "null_resource" "ansible-apply" {
+  triggers = {
+    always = timestamp()
+  }
   provisioner "local-exec" {
     command = <<EOF
 cd ansible
