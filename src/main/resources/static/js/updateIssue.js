@@ -29,7 +29,7 @@ function updateTicket(){
 		success: function(result) {
 		
 			if (result === "Success") {	
-			window.location.href="viewIssue.html";		
+			window.location.href="viewissue.html";		
 			}
 		},
 		cache: false
