@@ -42,9 +42,6 @@ public class UserReg {
 	
 	@Transient
 	private String message;
-//	@OneToMany(targetEntity = Ticket.class, cascade = CascadeType.ALL)
-//	@JoinColumn(name = "user_id", referencedColumnName = "id")
-//	private List<Ticket> tickets;
 
 	public UserReg() {
 		super();
