@@ -175,11 +175,6 @@ public class TicketingServiceImpl implements TicketingService{
 		return "Success";
 	}
 
-//	@Override
-//	public ResponseEntity<UserTicketNew> getTicket(UserTicketNew userTicketNew) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
 
 	@Override
 	public ResponseEntity<UserTicketNew> getTicket(UserTicketNew userTicket) {
